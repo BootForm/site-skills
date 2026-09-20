@@ -1,0 +1,8 @@
+{
+  "name": "vitepress-sites",
+  "version": "0.1.0",
+  "description": "Build a marketing site, portfolio, or blog with VitePress the BootForm way: layout: home / layout: page, never a docs sidebar.",
+  "author": {
+    "name": "BootForm"
+  }
+}

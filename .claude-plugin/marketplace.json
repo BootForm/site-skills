@@ -1,0 +1,18 @@
+{
+  "name": "site-skills",
+  "owner": {
+    "name": "BootForm"
+  },
+  "plugins": [
+    {
+      "name": "vitepress-sites",
+      "source": "./plugins/vitepress-sites",
+      "description": "Build a marketing site, portfolio, or blog with VitePress the BootForm way: layout: home / layout: page, never a docs sidebar."
+    },
+    {
+      "name": "bootform",
+      "source": "./plugins/bootform",
+      "description": "Add a real, working contact form to any site with BootForm, and style it so it doesn't look broken. Framework-agnostic."
+    }
+  ]
+}

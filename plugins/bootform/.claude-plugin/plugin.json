@@ -1,0 +1,8 @@
+{
+  "name": "bootform",
+  "version": "0.1.0",
+  "description": "Add a real, working contact form to any site with BootForm, and style it so it doesn't look broken. Framework-agnostic.",
+  "author": {
+    "name": "BootForm"
+  }
+}
