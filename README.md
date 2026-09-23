@@ -4,8 +4,9 @@ A [Claude Code](https://claude.com/claude-code) plugin marketplace for building 
 sites, not tutorials about building sites. Two plugins:
 
 - **`vitepress-sites`**: build a marketing site, portfolio, or blog with VitePress, the way that
-  avoids VitePress's own docs-site defaults (a sidebar, `layout: doc`). Useful on its own, whether
-  or not you've ever heard of BootForm.
+  avoids VitePress's own docs-site defaults (a sidebar, `layout: doc`), then add your own kinds of
+  content to it (projects, books, team members, events) as generated collections. Useful on its
+  own, whether or not you've ever heard of BootForm.
 - **`bootform`**: add a real, working contact form to any site (any framework, not just
   VitePress), with no signup wall to get started, and style it so it doesn't come out invisible.
 
@@ -27,6 +28,8 @@ Then just ask, for example:
 
 > Build me a portfolio site with a working contact form.
 
+> Add a books section to my site, with the author and year on each card.
+
 ## What's in here
 
 ```
@@ -38,7 +41,13 @@ plugins/
       marketing-site/SKILL.md       ← github.com/BootForm/vitepress-marketing
       portfolio-site/SKILL.md       ← github.com/BootForm/vitepress-portfolio
       blog-site/SKILL.md            ← github.com/BootForm/vitepress-blog
+                                      (github.com/BootForm/vitepress-villa, a villa or holiday
+                                      rental site, has no skill of its own yet: start from the
+                                      template, then use restyle-theme and add-collection on it)
       restyle-theme/SKILL.md        ← restyle an existing site from one of the above
+      add-collection/               ← add a new kind of content (books, team, events...) to any of them
+        SKILL.md
+        templates/                  ← the shared card, entry header, data loader and listing page it copies
   bootform/
     .claude-plugin/plugin.json
     .mcp.json                       ← auto-connects mcp.bootform.com on install

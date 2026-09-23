@@ -5,9 +5,9 @@ description: Restyle an existing VitePress site built from a BootForm template (
 
 # Restyle a VitePress site's theme
 
-Applies to any site built from `vitepress-marketing`, `vitepress-portfolio`, or `vitepress-blog`
-(via the `marketing-site`, `portfolio-site`, or `blog-site` skills, or their template repos
-directly).
+Applies to any site built from `vitepress-marketing`, `vitepress-portfolio`, `vitepress-blog`, or
+`vitepress-villa` (via the `marketing-site`, `portfolio-site`, or `blog-site` skills, or their
+template repos directly).
 
 ## Where the actual styling lives
 
