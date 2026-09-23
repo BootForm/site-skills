@@ -30,7 +30,9 @@ almost always why, not a typo in the class name. **Fix by appending `!` to the s
 that needs to win** (`text-3xl!`, `mx-auto!`, `border-gray-300!`, `bg-brand-500!`). Confirm with
 a real `npm run build` and a look at the actual rendered page (or its computed styles), not a
 guess, and don't apply `!` everywhere by default: only the properties this reset actually touches
-need it.
+need it. Markdown inside a `prose` wrapper is the exception: `!` can't reach it, and the templates
+handle it once with a `revert-layer` rule at the end of `style.css`. Keep that rule. If an older
+site lacks it and its `prose` text looks flat, append `add-collection`'s `templates/prose-fix.css`.
 
 ## Hero variety
 

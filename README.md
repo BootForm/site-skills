@@ -47,7 +47,7 @@ plugins/
       restyle-theme/SKILL.md        ← restyle an existing site from one of the above
       add-collection/               ← add a new kind of content (books, team, events...) to any of them
         SKILL.md
-        templates/                  ← the shared card, entry header, data loader and listing page it copies
+        templates/                  ← the shared card, entry header, data loader, listing page and prose fix it copies
   bootform/
     .claude-plugin/plugin.json
     .mcp.json                       ← auto-connects mcp.bootform.com on install
