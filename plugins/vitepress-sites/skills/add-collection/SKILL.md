@@ -73,6 +73,11 @@ skill adds, so they only get installed once.
 Leave the site's existing card components (`RoomCard`, `ProductCard`) and existing collections
 alone. Don't migrate them unless the user asks.
 
+Also check `docs/.vitepress/theme/style.css` for a rule containing `revert-layer`. Sites made from
+these templates before 2026-09-23 don't have it, and without it every entry page's markdown body
+renders flat: `# Headings` at body size, no paragraph spacing, no list bullets. If it's missing,
+append `templates/prose-fix.css` to the end of `style.css` unchanged.
+
 ## 4. Create the collection
 
 Copy from `templates/`, replacing the `__PLACEHOLDERS__`:
