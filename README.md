@@ -41,6 +41,9 @@ plugins/
       marketing-site/SKILL.md       ← github.com/BootForm/vitepress-marketing
       portfolio-site/SKILL.md       ← github.com/BootForm/vitepress-portfolio
       blog-site/SKILL.md            ← github.com/BootForm/vitepress-blog
+                                      (github.com/BootForm/vitepress-villa, a villa or holiday
+                                      rental site, has no skill of its own yet: start from the
+                                      template, then use restyle-theme and add-collection on it)
       restyle-theme/SKILL.md        ← restyle an existing site from one of the above
       add-collection/               ← add a new kind of content (books, team, events...) to any of them
         SKILL.md
