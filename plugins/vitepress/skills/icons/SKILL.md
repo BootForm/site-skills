@@ -30,13 +30,25 @@ Don't draw icons by hand, and don't copy them from a paid or unclear-licence set
    curl -sfL https://cdn.jsdelivr.net/npm/lucide-static/icons/waves.svg
    ```
 
-   A failure (exit code 22) means the name is wrong. Search again rather than guessing a
-   similar name.
+   A failure (exit code 22) means the name is wrong. Don't guess a similar name; search Lucide's
+   own tag index instead, which maps every icon name to its search words:
+
+   ```bash
+   curl -sfL https://cdn.jsdelivr.net/npm/lucide-static/tags.json -o lucide-tags.json
+   ```
+
+   Look for your word in the names and in the tag lists (`dumbbell` is tagged "gym", `flame` is
+   tagged "fire"). Some things have no icon at all: tennis, billiards and elevators, for
+   example. Then use the closest honest glyph (a ball, an up-down arrow), and tell the user which
+   ones are stand-ins.
 3. **Adapt it to the site's markup**, matching the icon you're replacing:
    - Put it on **one line**. A multi-line icon is fine in plain HTML, but in a VitePress markdown
      page a blank line inside HTML breaks the block, and one line can't contain one.
    - Drop Lucide's `class`, `width` and `height`. Keep `viewBox="0 0 24 24"`, `fill="none"`,
      `stroke="currentColor"`, `stroke-width`, `stroke-linecap` and `stroke-linejoin`.
+   - If the icon you're replacing sizes itself with `width`/`height` attributes and a
+     `stroke-width` (the villa template's facilities use 28px and 1.5), keep those values on the
+     new one, so the set stays uniform.
    - Copy the **size and colour classes** from the icon it replaces (`class="size-5"`, often
      inside a wrapper with `text-brand-500` or `text-brand-600`). Colour always comes from
      `currentColor`: never hard-code a `stroke` or `fill` colour, or dark mode can't change it.
