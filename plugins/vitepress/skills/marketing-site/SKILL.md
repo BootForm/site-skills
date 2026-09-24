@@ -29,6 +29,12 @@ VitePress's own docs-site defaults (a sidebar, `layout: doc` everywhere).
    as a page that looks right; several real gotchas in this template's own `AGENTS.md` produced a
    green build and a broken or invisible result.
 
+## Growing it
+
+- Another page section (pricing, an FAQ, testimonials, a better hero): the `add-section` skill.
+- A new kind of content with its own listing page (projects, books, team, events): the
+  `add-collection` skill.
+
 ## Do not
 
 - Add a sidebar, or use `layout: doc` anywhere outside a page that is genuinely documentation.
