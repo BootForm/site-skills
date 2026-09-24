@@ -34,6 +34,12 @@ list of links every time they publish.
    has hit a silently-empty excerpt, a nested `v-for` losing its scope, and a missing footer, none
    of which produced a build error.
 
+## Growing it
+
+- Another page section (pricing, an FAQ, testimonials, a better hero): the `add-section` skill.
+- A new kind of content with its own listing page (projects, books, team, events): the
+  `add-collection` skill.
+
 ## Do not
 
 - Pass `excerpt: true` to `createContentLoader` expecting it to split on `<!-- more -->`; it needs

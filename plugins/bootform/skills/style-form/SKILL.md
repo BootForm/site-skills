@@ -38,7 +38,7 @@ up unlayered while Tailwind's own utility classes are layered, so a plain class 
 `npm run build`, followed by actually looking at the built page (or its computed styles), shows
 the classes above aren't taking effect, append `!` to the ones that need to win:
 `border-gray-300!`, `bg-white!`, `px-3!`, `py-2!`, `bg-brand-500!`, and so on. See the
-`restyle-theme` skill (from the `vitepress-sites` plugin) for the fuller explanation.
+`theme` skill (from the `vitepress` plugin) for the fuller explanation.
 
 ## Always verify
 

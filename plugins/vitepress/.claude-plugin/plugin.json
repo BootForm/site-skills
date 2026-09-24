@@ -1,0 +1,8 @@
+{
+  "name": "vitepress",
+  "version": "0.2.0",
+  "description": "Build and grow a VitePress site the BootForm way: start from a marketing, portfolio, blog or villa template, add page sections and new kinds of content, restyle it. Never a docs sidebar.",
+  "author": {
+    "name": "BootForm"
+  }
+}

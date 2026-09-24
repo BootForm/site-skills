@@ -3,11 +3,14 @@
   "owner": {
     "name": "BootForm"
   },
+  "metadata": {
+    "description": "Build real static sites with Claude Code: VitePress templates, page sections and new kinds of content, plus a working contact form. No docs sidebars."
+  },
   "plugins": [
     {
-      "name": "vitepress-sites",
-      "source": "./plugins/vitepress-sites",
-      "description": "Build a marketing site, portfolio, or blog with VitePress the BootForm way: layout: home / layout: page, never a docs sidebar."
+      "name": "vitepress",
+      "source": "./plugins/vitepress",
+      "description": "Build and grow a VitePress site the BootForm way: start from a marketing, portfolio, blog or villa template, add page sections and new kinds of content, restyle it. Never a docs sidebar."
     },
     {
       "name": "bootform",
