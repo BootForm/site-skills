@@ -1,7 +1,7 @@
 {
   "name": "bootform",
-  "version": "0.1.0",
-  "description": "Add a real, working contact form to any site with BootForm, and style it so it doesn't look broken. Framework-agnostic.",
+  "version": "0.2.0",
+  "description": "Add a real, working form to any site with BootForm, style it so it doesn't look broken, and show approved submissions back on the site (photos included) with no backend. Framework-agnostic.",
   "author": {
     "name": "BootForm"
   }

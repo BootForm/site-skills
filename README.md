@@ -8,7 +8,9 @@ sites, not tutorials about building sites. Two plugins:
   avoids VitePress's docs-site defaults (a sidebar, `layout: doc`). Useful on its own, whether or
   not you've ever heard of BootForm.
 - **`bootform`**: add a real, working contact form to any site (any framework, not just
-  VitePress), with no signup wall to get started, and style it so it doesn't come out invisible.
+  VitePress), with no signup wall to get started, style it so it doesn't come out invisible, and
+  show approved submissions back on the site (testimonials, a board, a map with photos) with no
+  backend of your own.
 
 ## Install
 
@@ -48,6 +50,7 @@ Run a command, or just describe what you want and Claude picks the right one.
 |---|---|
 | `/bootform:add-contact-form` | Creates a real form endpoint with no account, wires it into your page, and gives you the link to claim it |
 | `/bootform:style-form` | Makes a form look right: input types, states, dark mode |
+| `/bootform:show-submissions` | Shows approved submissions on your site (testimonials, a guestbook, a map with photos) from BootForm's public feed. No backend, no API key in the page. Needs the Pro plan |
 
 For example:
 
@@ -58,6 +61,7 @@ For example:
 /vitepress:theme           make it dark green, with a serif font for headings
 /vitepress:icons           icons for pool, gym, parking and wifi, and my Instagram in the header
 /bootform:add-contact-form
+/bootform:show-submissions a map of the items people submit, with their photos
 ```
 
 ## Rather not use Claude Code?
@@ -105,6 +109,7 @@ plugins/
     skills/
       add-contact-form/SKILL.md
       style-form/SKILL.md
+      show-submissions/SKILL.md     ← bootform.com/docs/moderated-content-feed
 ```
 
 ## Why anonymous
