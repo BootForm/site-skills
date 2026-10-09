@@ -25,6 +25,9 @@ required on the user's side.
    webhook), use `bootform_add_slack` / `bootform_add_discord` / `bootform_add_webhook` after the
    form has been claimed. These need the user's own API key, not anonymous mode.
 
+If the user also wants the submissions shown on the site (testimonials, a guestbook, a board, a
+map, listings), continue with the `show-submissions` skill instead of building a backend.
+
 ## Do not
 
 - Ever hand-write a fake `action` URL, or invent a `form_id` yourself. Always get a real one from
