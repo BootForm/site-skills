@@ -50,7 +50,7 @@ Run a command, or just describe what you want and Claude picks the right one.
 |---|---|
 | `/bootform:add-contact-form` | Creates a real form endpoint with no account, wires it into your page, and gives you the link to claim it |
 | `/bootform:style-form` | Makes a form look right: input types, states, dark mode |
-| `/bootform:show-submissions` | Shows approved submissions on your site (testimonials, a guestbook, a map with photos) from BootForm's public feed. No backend, no API key in the page. Needs the Pro plan |
+| `/bootform:show-submissions` | Shows approved submissions on your site (testimonials, a guestbook, a map with photos) from BootForm's public feed, and lets visitors mark items "taken", "found" or "sold". No backend, no API key in the page. Needs the Pro plan |
 
 For example:
 
@@ -61,7 +61,7 @@ For example:
 /vitepress:theme           make it dark green, with a serif font for headings
 /vitepress:icons           icons for pool, gym, parking and wifi, and my Instagram in the header
 /bootform:add-contact-form
-/bootform:show-submissions a map of the items people submit, with their photos
+/bootform:show-submissions a map of the items people leave on the street, with photos and a "taken" button
 ```
 
 ## Rather not use Claude Code?
