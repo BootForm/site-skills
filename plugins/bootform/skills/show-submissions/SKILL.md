@@ -29,9 +29,10 @@ the owner made public. Files uploaded under a public field come with a public `u
 ## Steps
 
 1. **Create the form** with the `add-contact-form` skill's first steps (`bootform_create_form`; the
-   first call signs the user in through the browser). Name the inputs after what the page will show, for example `description`,
-   `category`, `lat`, `lng`, and `<input type="file" name="photo" accept="image/*">` with
-   `enctype="multipart/form-data"` on the `<form>`.
+   first call signs the user in through the browser). Name the inputs after what the page will
+   show, for example `description`, `category`, `lat`, `lng`, and
+   `<input type="file" name="photo" accept="image/*">` with `enctype="multipart/form-data"` on the
+   `<form>`.
 2. **Turn the feed on.** The account must be on Pro or Business
    (https://app.bootform.com/account/billing/plans). Call `bootform_configure_form` with
    `content_feed_enabled: true` and `public_fields` listing every field to show, file fields like
@@ -62,8 +63,8 @@ the owner made public. Files uploaded under a public field come with a public `u
    With an item status (step 5), each item also has `item.status: { label, set, set_at, count }`;
    load `?status=open` to show only what's still available.
 4. **Explain approving** to the user: new submissions wait in the dashboard's Pending review
-   folder; approve them there, or ask you to approve them with `bootform_moderate_submission`
-   (needs their API key in the MCP config). The feed caches for 30 seconds.
+   folder; approve them there, or ask you to approve them with `bootform_moderate_submission`.
+   The feed caches for 30 seconds.
 5. **Listings that go stale** (giveaways, lost and found, items for sale, events that fill up):
    give the form an **item status**, so visitors can mark an item "taken", "found", "sold" or
    "full". Call `bootform_configure_form` with `item_status_label: "taken"` (plus
