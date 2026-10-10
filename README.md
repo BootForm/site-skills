@@ -48,7 +48,7 @@ Run a command, or just describe what you want and Claude picks the right one.
 
 | Command | What it does |
 |---|---|
-| `/bootform:add-contact-form` | Creates a real form endpoint with no account, wires it into your page, and gives you the link to claim it |
+| `/bootform:add-contact-form` | Creates a real form, wires it into your page, and adds where submissions go. The first time, you sign in to BootForm in the browser (or create a free account); no API key |
 | `/bootform:style-form` | Makes a form look right: input types, states, dark mode |
 | `/bootform:show-submissions` | Shows approved submissions on your site (testimonials, a guestbook, a map with photos) from BootForm's public feed, and lets visitors mark items "taken", "found" or "sold". No backend, no API key in the page. Needs the Pro plan |
 
@@ -112,12 +112,16 @@ plugins/
       show-submissions/SKILL.md     ← bootform.com/docs/moderated-content-feed
 ```
 
-## Why anonymous
+## Signing in
 
-`bootform`'s skills call `bootform_create_form` with no API key. That works: BootForm's MCP
-server supports anonymous form creation, and every response carries a `claim_url` so the form's
-owner can claim it before the page goes live. No account, no signup wall, before you've decided
-whether the form backend is any good.
+The plugin connects to BootForm's MCP server (`https://mcp.bootform.com/mcp`). The first time a
+skill uses it, Claude Code asks you to authenticate: run `/mcp`, pick **bootform**, choose
+**Authenticate**, then sign in to BootForm in the browser (or create a free account) and click
+**Allow**. There is no API key to copy, and you stay signed in. Disconnect any time at
+app.bootform.com, Settings, Connected Apps.
+
+Installed the plugin before October 2026, or added a key to the BootForm server by hand? API keys no
+longer work on the MCP server: remove the key from your config and authenticate as above.
 
 ## Upgrading from `vitepress-sites`
 

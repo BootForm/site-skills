@@ -28,20 +28,18 @@ the owner made public. Files uploaded under a public field come with a public `u
 
 ## Steps
 
-1. **Create the form** with the `add-contact-form` skill's first steps (`bootform_create_form`, no
-   key needed). Name the inputs after what the page will show, for example `description`,
+1. **Create the form** with the `add-contact-form` skill's first steps (`bootform_create_form`; the
+   first call signs the user in through the browser). Name the inputs after what the page will show, for example `description`,
    `category`, `lat`, `lng`, and `<input type="file" name="photo" accept="image/*">` with
    `enctype="multipart/form-data"` on the `<form>`.
-2. **Give the user the `claim_url` and have them claim the form before the page goes live.** File
-   uploads are refused until it's claimed, and anyone could claim it first.
-3. **Turn the feed on.** The account must be on Pro or Business
-   (https://app.bootform.com/account/billing/plans). If the user's API key is in the MCP config,
-   call `bootform_configure_form` with `content_feed_enabled: true` and `public_fields` listing
-   every field to show, file fields like `photo` included. If the tool rejects those arguments or
-   there is no key, ask the user to do it in the dashboard instead: the form's Workflow tab,
+2. **Turn the feed on.** The account must be on Pro or Business
+   (https://app.bootform.com/account/billing/plans). Call `bootform_configure_form` with
+   `content_feed_enabled: true` and `public_fields` listing every field to show, file fields like
+   `photo` included. If the tool rejects those arguments, ask the user to do it in the dashboard
+   instead: the form's Workflow tab,
    Moderated content feed, enable moderation and fill in Public fields. `PLAN_LIMIT` means the
    account isn't on Pro yet.
-4. **Render the feed in the page.** Either the drop-in widget:
+3. **Render the feed in the page.** Either the drop-in widget:
 
    ```html
    <script src="https://bootform.com/widget/v1/bootform-widget.js" data-form-id="FORM_ID" async></script>
@@ -61,12 +59,12 @@ the owner made public. Files uploaded under a public field come with a public `u
 
    Insert field values with `textContent` (or the framework's normal escaping), never
    `innerHTML`: they are anonymous visitor input.
-   With an item status (step 6), each item also has `item.status: { label, set, set_at, count }`;
+   With an item status (step 5), each item also has `item.status: { label, set, set_at, count }`;
    load `?status=open` to show only what's still available.
-5. **Explain approving** to the user: new submissions wait in the dashboard's Pending review
+4. **Explain approving** to the user: new submissions wait in the dashboard's Pending review
    folder; approve them there, or ask you to approve them with `bootform_moderate_submission`
    (needs their API key in the MCP config). The feed caches for 30 seconds.
-6. **Listings that go stale** (giveaways, lost and found, items for sale, events that fill up):
+5. **Listings that go stale** (giveaways, lost and found, items for sale, events that fill up):
    give the form an **item status**, so visitors can mark an item "taken", "found", "sold" or
    "full". Call `bootform_configure_form` with `item_status_label: "taken"` (plus
    `item_status_threshold` if one stray mark shouldn't flip an item, and
@@ -82,7 +80,7 @@ the owner made public. Files uploaded under a public field come with a public `u
    with `bootform_moderate_submission` (`feed_status: "set" | "clear"`). Use this, not the report
    button: reports mean "this content is bad" and hide the item from everyone. The widget shows the
    status and a "Mark as ..." button on its own.
-7. Optional: anonymous reactions and reports, with `POST .../feed/{submission_id}/react`
+6. Optional: anonymous reactions and reports, with `POST .../feed/{submission_id}/react`
    `{"type": "up"}` and `POST .../feed/{submission_id}/report`. Both are limited per IP address.
    The widget already includes them.
 
@@ -90,7 +88,7 @@ the owner made public. Files uploaded under a public field come with a public `u
 
 - Put an API key in the page or the repo to read submissions. Keys can do everything on the
   account. The feed is the public, read-only way.
-- Build a "mark as taken" backend, or repurpose reports or reactions for it. Item status (step 6)
+- Build a "mark as taken" backend, or repurpose reports or reactions for it. Item status (step 5)
   does it with no key.
 - Promise that a submission shows up instantly. It shows up after approval, then within 30
   seconds.

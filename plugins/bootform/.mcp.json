@@ -2,7 +2,7 @@
   "mcpServers": {
     "bootform": {
       "type": "http",
-      "url": "https://mcp.bootform.com/sse"
+      "url": "https://mcp.bootform.com/mcp"
     }
   }
 }
