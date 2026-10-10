@@ -96,7 +96,7 @@ If there's no real image yet, leave the Picsum URL and say so. Give every meanin
 
 **Forms** (`heroes/with-form`, `cta-footers/newsletter`). Keep the hidden `_honeypot` input. For
 the `action` URL, use the `add-contact-form` skill from the `bootform` plugin to get a real form
-ID and its claim link, if that plugin is installed. Otherwise leave
+ID, if that plugin is installed. Otherwise leave
 `https://f.bootform.com/__YOUR_FORM_ID__` and tell the user to generate their own ID at
 https://bootform.com/uuidgenerator and claim it before the page goes live. Never make up a form ID.
 

@@ -29,8 +29,8 @@ count, message), not a placeholder.
    `docs/gallery.md` to match. Replace the two example journal posts under `docs/posts/`, or delete
    them and the Journal nav link if the user doesn't want a local guide.
 6. Fill in `docs/contact.md`'s location, phone or WhatsApp, and email. For the form's `action`,
-   use the `add-contact-form` skill from the `bootform` plugin to get a real form ID and its claim
-   link. Tell the user to claim it before the site goes live.
+   use the `add-contact-form` skill from the `bootform` plugin to get a real form ID (it signs the
+   user in to BootForm the first time).
 7. Use the property's own photos. The template's Unsplash photos (via Picsum) stand in until then,
    and must not be passed off as the property.
 8. Before finishing: `npm install && npm run build`, then open the built site and look at it on a
