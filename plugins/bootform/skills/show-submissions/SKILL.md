@@ -20,7 +20,9 @@ the owner made public. Files uploaded under a public field come with a public `u
 ## Before you start, tell the user
 
 - **The feed needs the Pro plan or higher.** File uploads alone need Starter. Free cannot show a
-  feed. Say this up front, not after building the page.
+  feed. Say this up front, not after building the page. Call `bootform_get_account` first: its
+  `limits.features.content_feed` and `limits.features.file_uploads` say whether the connected
+  account's plan has them, and `plan.tier` names the plan.
 - **Nothing appears until the owner approves it.** Every submission starts pending. There is no
   auto-publish.
 - What it does not do: visitor logins, submitters editing their own entries, server-side queries
@@ -28,13 +30,14 @@ the owner made public. Files uploaded under a public field come with a public `u
 
 ## Steps
 
-1. **Create the form** with the `add-contact-form` skill's first steps (`bootform_create_form`; the
-   first call signs the user in through the browser). Name the inputs after what the page will
+1. **Create the form** with the `add-contact-form` skill's first steps (`bootform_get_account`,
+   a workspace if the site is for a client, then `bootform_create_form`; the first call signs the
+   user in through the browser). Name the inputs after what the page will
    show, for example `description`, `category`, `lat`, `lng`, and
    `<input type="file" name="photo" accept="image/*">` with `enctype="multipart/form-data"` on the
    `<form>`.
 2. **Turn the feed on.** The account must be on Pro or Business
-   (https://app.bootform.com/account/billing/plans). Call `bootform_configure_form` with
+   (https://app.bootform.com/account/billing/plans); `bootform_get_account` tells you. Call `bootform_configure_form` with
    `content_feed_enabled: true` and `public_fields` listing every field to show, file fields like
    `photo` included. If the tool rejects those arguments, ask the user to do it in the dashboard
    instead: the form's Workflow tab,

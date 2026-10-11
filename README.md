@@ -48,7 +48,7 @@ Run a command, or just describe what you want and Claude picks the right one.
 
 | Command | What it does |
 |---|---|
-| `/bootform:add-contact-form` | Creates a real form, wires it into your page, and adds where submissions go. The first time, you sign in to BootForm in the browser (or create a free account); no API key |
+| `/bootform:add-contact-form` | Creates a real form, wires it into your page, and adds where submissions go, including verifying a new email address (you click one link in that inbox). Checks your plan first, and on Pro can put each client's forms in their own workspace. The first time, you sign in to BootForm in the browser (or create a free account); no API key |
 | `/bootform:style-form` | Makes a form look right: input types, states, dark mode |
 | `/bootform:show-submissions` | Shows approved submissions on your site (testimonials, a guestbook, a map with photos) from BootForm's public feed, and lets visitors mark items "taken", "found" or "sold". No backend, no API key in the page. Needs the Pro plan |
 
@@ -61,6 +61,7 @@ For example:
 /vitepress:theme           make it dark green, with a serif font for headings
 /vitepress:icons           icons for pool, gym, parking and wifi, and my Instagram in the header
 /bootform:add-contact-form
+/bootform:add-contact-form a form for my client Acme's site, in its own workspace, sending to hello@acme.example
 /bootform:show-submissions a map of the items people leave on the street, with photos and a "taken" button
 ```
 

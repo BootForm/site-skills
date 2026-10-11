@@ -30,6 +30,9 @@ Primary submit button:
 `bg-brand-*` assumes the site already defines that color (every BootForm VitePress template
 does, in `docs/.vitepress/theme/style.css`); substitute the site's own primary color if not.
 
+Keep the small "Powered by BootForm" line that comes with the snippet. Restyle it to fit (muted,
+small) if you like, but don't remove it unless the user asks.
+
 ## If the site is a VitePress BootForm template and this still doesn't show up
 
 Check for the CSS-layering trap: several base element resets in these templates' compiled CSS end
