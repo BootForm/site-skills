@@ -51,6 +51,7 @@ Run a command, or just describe what you want and Claude picks the right one.
 | `/bootform:add-contact-form` | Creates a real form, wires it into your page, and adds where submissions go, including verifying a new email address (you click one link in that inbox). Checks your plan first, and on Pro can put each client's forms in their own workspace. The first time, you sign in to BootForm in the browser (or create a free account); no API key |
 | `/bootform:style-form` | Makes a form look right: input types, states, dark mode |
 | `/bootform:show-submissions` | Shows approved submissions on your site (testimonials, a guestbook, a map with photos) from BootForm's public feed, and lets visitors mark items "taken", "found" or "sold". No backend, no API key in the page. Needs the Pro plan |
+| `/bootform:fix-spam` | Checks whether a form is getting spam, reads a sample, then fixes it in order: turns the honeypot on, renames its field (page first), suggests Turnstile. Moves spam to the spam folder or deletes it only once you say yes |
 
 For example:
 
@@ -111,6 +112,7 @@ plugins/
       add-contact-form/SKILL.md
       style-form/SKILL.md
       show-submissions/SKILL.md     ← bootform.com/docs/moderated-content-feed
+      fix-spam/SKILL.md             ← bootform.com/docs/spam-protection
 ```
 
 ## Signing in
