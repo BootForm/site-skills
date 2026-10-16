@@ -94,7 +94,7 @@ there is one: in VitePress, put it in `docs/public/` and write `:src="withBase('
 If there's no real image yet, leave the Picsum URL and say so. Give every meaningful image a real
 `alt`.
 
-**Forms** (`heroes/with-form`, `cta-footers/newsletter`). Keep the hidden `_honeypot` input. For
+**Forms** (`heroes/with-form`, `cta-footers/newsletter`). Keep the hidden `bform_website` input. For
 the `action` URL, use the `add-contact-form` skill from the `bootform` plugin to get a real form
 ID, if that plugin is installed. Otherwise leave
 `https://f.bootform.com/__YOUR_FORM_ID__` and tell the user to generate their own ID at
