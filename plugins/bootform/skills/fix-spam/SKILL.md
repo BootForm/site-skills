@@ -1,6 +1,6 @@
 ---
 name: fix-spam
-description: Find out whether a BootForm form is getting spam and fix it, step by step, through the BootForm MCP tools: check the form, read a sample, turn on or rename the honeypot and update the page, suggest Turnstile, and move or delete the spam once the user agrees. Use whenever a user says their form gets spam, junk or bot messages, or you notice spam while reading a form's submissions.
+description: Find out whether a BootForm form is getting spam and fix it, step by step, through the BootForm MCP tools: check the form, read a sample, turn on the honeypot and update the page, suggest Turnstile, and move or delete the spam once the user agrees. Use whenever a user says their form gets spam, junk or bot messages, or you notice spam while reading a form's submissions.
 ---
 
 # Fix spam on a form (BootForm)
@@ -43,18 +43,11 @@ Never ask the user for an API key.
       `honeypot_field`). Then call `bootform_configure_form` with `honeypot_enabled: true`. Page
       first, switch second: while the switch is on, a submission without the field goes to spam.
 
-   b. **Honeypot on, spam still in the inbox: rename the field.** Bots learn a common name and
-      leave it empty. Pick a new, plausible name the page doesn't already use for a real field
-      (for example `company_url` or `home_page`; never `website`, `url`, `phone` or `company`,
-      which a real form might have). Change the honeypot input's `name` on the page to the new
-      name, deploy (or tell the user to), and only then call `bootform_configure_form` with
-      `honeypot_field`. The tool answers with the new input line and a warning; if the user can't
-      deploy right now, wait. Renaming first and deploying later sends every real message to spam
-      in between.
-
-   c. **Bots still get through: suggest Turnstile.** Cloudflare Turnstile is set up by the user in
-      the dashboard (app.bootform.com, the form's Settings, Spam protection) with their own
-      Cloudflare keys. Never ask for CAPTCHA keys; they must not pass through this chat. Once it's
+   b. **Honeypot on, spam still in the inbox: suggest Turnstile.** Don't rename the honeypot
+      field: the bots that get past it leave every hidden field empty, whatever it is called, so a
+      new name changes nothing (BootForm tried it on its own forms). Cloudflare Turnstile is the
+      next step. It is set up by the user in the dashboard (app.bootform.com, the form's
+      Settings, Spam protection) with their own Cloudflare keys. Never ask for CAPTCHA keys; they must not pass through this chat. Once it's
       on, the page needs Turnstile's script and widget; `bootform_get_snippet` includes them.
 
 5. **Clean up, only with a yes.** Offer to move the spam you found to the spam folder
