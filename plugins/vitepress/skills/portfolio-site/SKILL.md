@@ -6,8 +6,9 @@ description: Build a portfolio or studio site (case studies, a work list, a hire
 # Portfolio site (VitePress)
 
 Start from `github.com/BootForm/vitepress-portfolio`. A portfolio without a working way to
-actually get hired from it is close to useless, so this template ships a real contact form, not a
-placeholder.
+actually get hired from it is close to useless, so this template ships a finished contact page
+with the form already built. Its `action` points at the placeholder `__YOUR_FORM_ID__`, so it
+receives nothing until step 6 puts a real form ID there.
 
 ## Steps
 
@@ -28,11 +29,15 @@ placeholder.
 5. Use real, freely-licensed photos for each case study image (Unsplash License via Picsum
    Photos is what this template ships with), not placeholder SVGs, and not screenshots that imply
    real client work if the user hasn't done any yet.
-6. If the user wants to change or extend the contact form, use the `add-contact-form` and
-   `style-form` skills (from the `bootform` plugin) rather than hand-writing changes to it.
-7. Before finishing: run `npm install && npm run build`, then actually open the built output and
-   look at it, in both light and dark mode. A successful build is not the same as a page that
-   looks right.
+6. Fill in `docs/contact.md`'s location, phone and email. For the form's `action`, use the
+   `add-contact-form` skill from the `bootform` plugin to get a real form ID and replace
+   `__YOUR_FORM_ID__` with it (it signs the user in to BootForm the first time). Until then the
+   form posts to a placeholder and every message is lost. To change or extend the form itself, use
+   `add-contact-form` and `style-form` rather than hand-writing changes to it.
+7. Before finishing: run `npm install && npm run build`, check that `__YOUR_FORM_ID__` no longer
+   appears anywhere under `docs/` (outside `docs/.vitepress/dist`), then actually open the built
+   output and look at it, in both light and dark mode. A successful build is not the same as a
+   page that looks right.
 
 ## Growing it
 

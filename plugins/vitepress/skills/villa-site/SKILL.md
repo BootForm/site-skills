@@ -6,8 +6,9 @@ description: Build a villa, holiday rental, guesthouse or small hotel site (room
 # Villa or holiday rental site (VitePress)
 
 Start from `github.com/BootForm/vitepress-villa`. A property site without a working way to ask
-about dates is just a brochure, so this template ships a real booking enquiry form (dates, guest
-count, message), not a placeholder.
+about dates is just a brochure, so this template ships a finished booking enquiry form (dates,
+guest count, message). Its `action` points at the placeholder `__YOUR_FORM_ID__`, so it receives
+nothing until step 6 puts a real form ID there.
 
 ## Steps
 
