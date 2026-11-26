@@ -132,6 +132,12 @@ The `vitepress` plugin was called `vitepress-sites` until 2026-09-23. If you ins
 that name, run `/plugin uninstall vitepress-sites@site-skills`, then
 `/plugin install vitepress@site-skills`.
 
+## Like it?
+
+If this saved you some time, a star on this repo helps other people find it. Everything else
+BootForm publishes is at [github.com/BootForm](https://github.com/BootForm): more templates, form
+styles and page sections, all free to copy.
+
 ## Licence
 
 MIT. Use the plugins and their templates however you like, including for client work.
