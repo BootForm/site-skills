@@ -2,17 +2,21 @@
 // that the result is readable. Plain Node, no dependencies:
 //
 //   node palette.mjs "#0f6f8c"
+//   node palette.mjs "#0a7"      (three-digit hex works too, as in CSS)
 //
 // Prints the @theme block (Tailwind's brand-50/500/600), the :root block (VitePress's
 // --vp-c-brand-1/2/3) and a .dark block (a lighter brand-1 so links stay readable on VitePress's
 // dark background), then a contrast report. Paste the three blocks into
 // docs/.vitepress/theme/style.css in place of the existing ones.
 
-const input = process.argv[2]
-if (!/^#?[0-9a-f]{6}$/i.test(input ?? '')) {
-  console.error('Usage: node palette.mjs "#rrggbb"')
+const arg = process.argv[2] ?? ''
+if (!/^#?(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(arg)) {
+  console.error('Usage: node palette.mjs "#rrggbb" (or "#rgb")')
   process.exit(1)
 }
+// Expand #rgb to #rrggbb before anything else runs, the way CSS reads it: #0a7 is #00aa77.
+const digits = arg.replace('#', '')
+const input = digits.length === 3 ? [...digits].map((d) => d + d).join('') : digits
 
 const parse = (hex) => hex.replace('#', '').match(/../g).map((h) => parseInt(h, 16))
 const toHex = (rgb) => '#' + rgb.map((c) => Math.round(Math.min(255, Math.max(0, c))).toString(16).padStart(2, '0')).join('')
